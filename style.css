@@ -3,17 +3,24 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-image: url(black\ foggy\ background.jpg);
+    display: flex;
 }
 .card{
-    width: 35vw;
-    height: 65vh;
+    width: 32%;
+    flex: 0 32%;
+    height: 100px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px;
     justify-content: space-between;
-    background-color: rgb(162, 212, 255); 
+    flex-wrap: wrap;
+    background-color: rgb(47, 65, 82); 
     margin-bottom: 100px;
     margin-top: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+
 }
 .card-img {
     width: 100%;

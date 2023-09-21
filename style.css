@@ -1,33 +1,37 @@
 body {
-    font-size: 10px;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     background-image: url(black\ foggy\ background.jpg);
+    font-size: 62.5%;
+    flex-direction: row;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 .card{
-    width: 32%;
-    flex: 0 32%;
-    height: 100px;
-    display: flex;
-    grid-template-rows: 200px 200px 200px;
-    grid-template-columns: 200px 200px 200px;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    font-size: 30px;
+    display: flex ;
     background-color: rgb(47, 65, 82); 
-    margin-bottom: 100px;
-    margin-top: 40px;
-    margin-right: 40px;
-    margin-left: 40px;
+    border: 1px solid red;
+    width: 25%;
+    height: 33%;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin: 50 50 50 50
 
 }
 .card-img {
-    width: 100%;
+    width: 60%;
+    height: 40%;
 }
 .card-title {
     font-size: 2.2rem;
     text-transform: uppercase;
+    text-align: center;
+    margin-top: 20;
+    margin-left: 25;
+    margin-right: 25;
 }
 .card-desc {
     font-size: 1.3rem;

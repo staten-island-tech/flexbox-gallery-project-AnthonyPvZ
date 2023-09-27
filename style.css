@@ -15,17 +15,17 @@ body {
     font-size: 30px;
     display: flex ;
     border: 1px solid red;
-    width: 25%;
-    height: 45%;
+    width: 20%;
+    height: 45vh;
     justify-content:center;
     flex-wrap:wrap;
-    margin: 40 40 40 40;
+    margin: 25 25 25 25;
     background-color: rgba(34, 34, 34, 0.7);
     box-shadow: inset 0px 10px 25px 5px rgba(0,0,0, 0.7);
 }
 .card-img {
     width: 60%;
-    height: 30%;
+    height: 25%;
 }
 .card-title {
     font-size: 2.2rem;

@@ -1,24 +1,25 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#guns').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+// filter guns and melee function
+const dom = {
+container: document.querySelector(".container"),
+guns: document.querySelectorAll(".gun"),
+melee: document.querySelectorAll(".melee"),
+gunbutton: document.querySelector("#Guns"),
+meleebutton: document.querySelector("#Melee"),
+}
+dom.meleebutton.addEventListener("click", function (sortmelee){
+  sortmelee.preventDefault();
+  dom.container.innerHTML = `<div class="card" id = "gun">
+  <h2 class="card-title">Boomstick</h2>
+  <img src="Boomstick.png" alt="" class="card-img">
+  <p class="card-desc">This shotgun allows you to load up to four shells in the chamber at once, propelling
+      you
+      backwards when fired. Hold down reload for faster loading of each shell.</p>         <div class="card">
+      <h2 class="card-title">'Hyperion' Heavy Laser</h2>
+      <img src="hyperion.png" alt="" class="card-img">
+      <p class="card-desc">Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a
+          change of piercing and have innate flame rounds. Loses damage over long distance.</p>
 
-setupCounter(document.querySelector('#counter'))
+  </div>`
+});

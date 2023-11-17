@@ -26,3 +26,4 @@ dom.meleebutton.addEventListener("click", function (sortmelee){
 
   </div>`
 });
+// https://stackoverflow.com/questions/54706080/generating-dynamic-html-cards-from-a-javascript-array

@@ -153,7 +153,16 @@ buttons.Contraband.addEventListener("click", function (filtercontraband) {
   </div>`;
     container.innerHTML += description;
   })
+  if (document.body.classList.contains("light")) {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+  } else{
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+    }
 })
+
+
 /* <div class="card">
           <h2 class="card-title">Murasama</h2>
           <img src="murasama.png" alt="" class="card-img">

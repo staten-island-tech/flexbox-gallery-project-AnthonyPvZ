@@ -1,4 +1,4 @@
-body {
+.light{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -11,6 +11,14 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
+:root{
+  --black: rgba(0, 0, 0);
+  --red: red;
+  --primary: var(--black);
+  --secondary: var(--red);
+}
+
 .card{
   font-size: 30px;
   display: flex ;
@@ -72,4 +80,17 @@ h1 {
   .card {
       width: 100%;
   }
+}
+.dark{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-position: center;
+  background-size:cover;
+  font-size: 62.5%;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

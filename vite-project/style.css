@@ -15,7 +15,7 @@ body {
   font-size: 30px;
   display: flex ;
   border: 1px solid red;
-  width: 35%;
+  width: 30%;
   height: 45vh;
   justify-content:center;
   flex-wrap:wrap;
@@ -62,4 +62,14 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+@media screen and (max-width: 1200px){
+  .card {
+      width: 45%;
+  }
+}
+@media screen and (max-width: 800px){
+  .card {
+      width: 100%;
+  }
 }

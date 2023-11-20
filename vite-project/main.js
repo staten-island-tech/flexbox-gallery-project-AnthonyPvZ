@@ -3,18 +3,20 @@ import './style.css'
 // filter guns and melee function
 const cards = [{
   title: "Boomstick",
+  type: "gun",
   image: "/Boomstick.png",
   description: "This shotgun allows you to load up to four shells in the chamber at once, propelling you backwards when fired. Hold down reload for faster loading of each shell.",
 },
 {
   title: "'Hyperion' Heavy Laser",
+  type: "gun",
   image: "/hyperion.png",
-  description: "testHeavy laser cannon with very slow fire rate but massive burst damage. Lasers have a change of piercing and have innate flame rounds. Loses damage over long distance.",
+  description: "Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a change of piercing and have innate flame rounds. Loses damage over long distance.",
 }];
 
 const container = document.querySelector("#container");
 
-cards.forEach((result, y) => {
+cards.forEach((result) => {
   const card = document.createElement('div');
   card.classlist = 'card';
   const description = `<div class="card"> 

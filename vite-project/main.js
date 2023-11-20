@@ -68,9 +68,9 @@ const cards = [{
   description: "A rod with attached rotating mechanical saws which can deal serrate damage. Hits many times very quickly in bursts.",
 },
 {
-  title:"Sanity Swordshifter",
+  title: "Sanity Swordshifter",
   type: "melee",
-  image: "/sanit sword.png",
+  image: "/sanity sword.png",
   description: "Pressing SPRINT + RELOAD alternates between a sword and glaive. The sword has a 3 hit combo and the glaive can hit in an arc. Can Change firemode to dodge or teleport to a sigil.",
 }
 ];
@@ -88,16 +88,82 @@ cards.forEach((result) => {
   container.innerHTML += description;
 })
 
-  /* <div class="card">
-            <h2 class="card-title">Murasama</h2>
-            <img src="murasama.png" alt="" class="card-img">
-            <p class="card-desc">It's the only thing I know for real…
-                Can dodge in all directions.
-                Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo.
-                Regular
-                blocking gives a slight boost.
-                Consumes meter on swing.</p>
-        </div> */
+const buttons = {
+  Guns: document.querySelector("#Guns"),
+  Melees: document.querySelector("#Melee"),
+  Contraband: document.querySelector("#Contraband")
+}
+buttons.Guns.addEventListener("click", function (filtergun) {
+  filtergun.preventDefault();
+  container.innerHTML = ""
+  cards.filter(function (guns) {
+    return guns.type === "gun"
+  }).map((result) => {
+    const card = document.createElement('div');
+    card.classlist = 'card';
+    const description = `<div class="card"> 
+        <h2 class="card-title">${result.title}</h2>
+        <img src="${result.image}" alt="" class="card-img">
+        <p class="card-desc">${result.description}</p>
+      </div>`;
+    container.innerHTML += description;
+  })
+})
+
+buttons.Melees.addEventListener("click", function (filtermelee) {
+  filtermelee.preventDefault();
+  container.innerHTML = ""
+  cards.filter((melees) => {
+    return melees.type === "melee"
+  }).map((result) => {
+    const card = document.createElement('div');
+    card.classlist = 'card';
+    const description = `<div class="card"> 
+          <h2 class="card-title">${result.title}</h2>
+          <img src="${result.image}" alt="" class="card-img">
+          <p class="card-desc">${result.description}</p>
+        </div>`;
+    container.innerHTML += description;
+  })
+})
+
+const contrabands = [{
+  title: "Force Staff",
+  type: "tool",
+  image: "",
+  description: "",
+},
+{
+  title: "Bane of Zblock",
+  type: "trinket",
+  image: "",
+  description: "",
+}
+]
+buttons.Contraband.addEventListener("click", function (filtercontraband) {
+  filtercontraband.preventDefault();
+  container.innerHTML = "";
+  contrabands.forEach((result) => {
+    const card = document.createElement('div');
+    card.classlist = 'card';
+    const description = `<div class="card"> 
+    <h2 class="card-title">${result.title}</h2>
+    <img src="${result.image}" alt="" class="card-img">
+    <p class="card-desc">${result.description}</p>
+  </div>`;
+    container.innerHTML += description;
+  })
+})
+/* <div class="card">
+          <h2 class="card-title">Murasama</h2>
+          <img src="murasama.png" alt="" class="card-img">
+          <p class="card-desc">It's the only thing I know for real…
+              Can dodge in all directions.
+              Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo.
+              Regular
+              blocking gives a slight boost.
+              Consumes meter on swing.</p>
+      </div> */
 
 
 // https://stackoverflow.com/questions/54706080/generating-dynamic-html-cards-from-a-javascript-array

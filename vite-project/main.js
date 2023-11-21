@@ -108,7 +108,10 @@ buttons.Guns.addEventListener("click", function (filtergun) {
       </div>`;
     container.innerHTML += description;
   })
-})
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+}})
 
 buttons.Melees.addEventListener("click", function (filtermelee) {
   filtermelee.preventDefault();
@@ -125,7 +128,10 @@ buttons.Melees.addEventListener("click", function (filtermelee) {
         </div>`;
     container.innerHTML += description;
   })
-})
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+}})
 
 const contrabands = [{
   title: "Force Staff",
@@ -138,8 +144,7 @@ const contrabands = [{
   type: "trinket",
   image: "",
   description: "",
-}
-]
+}]
 buttons.Contraband.addEventListener("click", function (filtercontraband) {
   filtercontraband.preventDefault();
   container.innerHTML = "";
@@ -156,10 +161,7 @@ buttons.Contraband.addEventListener("click", function (filtercontraband) {
   if (document.body.classList.contains("light")) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
-  } else{
-    document.body.classList.add("light");
-    document.body.classList.remove("dark");
-    }
+  } 
 })
 
 

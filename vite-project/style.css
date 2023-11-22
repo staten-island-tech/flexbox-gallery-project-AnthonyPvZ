@@ -15,22 +15,21 @@
 }
 
 :root{
-  --black: rgba(0, 0, 0);
+  --black: rgb(19, 19, 19);
   --red: red;
-  --primary: var(--black);
-  --secondary: var(--red);
+  --shadowy: rgba(34, 34, 34, 0.7);
 }
 
 .card{
   font-size: 30px;
   display: flex ;
-  border: 1px solid red;
+  border: 1px solid var(--red);
   width: 20%;
   height: 35vh;
   justify-content:center;
   flex-wrap:wrap;
   margin: 25 25 25 25;
-  background-color: rgba(34, 34, 34, 0.7);
+  background-color: var(--shadowy);
   box-shadow: inset 0px 10px 25px 5px rgba(0,0,0, 0.7);
 }
 .card-img {
@@ -87,7 +86,7 @@ h1 {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: var(--black);
   background-position: center;
   background-size:cover;
   font-size: 62.5%;
@@ -95,4 +94,16 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+.carddark{
+  font-size: 30px;
+  display: flex ;
+  border: 1px solid var(--shadowy);
+  width: 20%;
+  height: 35vh;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin: 25 25 25 25;
+  background-color: var(--shadowy);
+  box-shadow: inset 0px 10px 25px 5px rgba(0,0,0, 0.7);
 }

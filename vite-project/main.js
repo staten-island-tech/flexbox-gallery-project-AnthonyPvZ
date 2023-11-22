@@ -137,13 +137,13 @@ const contrabands = [{
   title: "Force Staff",
   type: "tool",
   image: "",
-  description: "",
+  description: "Control the wind with magic. Primary fire launches you in the direction you're looking. Secondary fire blasts zombies in front of you with cold air, slowing them, applying frostebite and pushing them away from you.",
 },
 {
   title: "Bane of Zblock",
   type: "trinket",
   image: "",
-  description: "",
+  description: "Allows the user to bunnyhop without restriction. No longer slowed when landing on the ground" + "-25% slow down from carrying heavy weapons" + "-0.6s minimum crouch jump time",
 }]
 buttons.Contraband.addEventListener("click", function (filtercontraband) {
   filtercontraband.preventDefault();
@@ -162,6 +162,10 @@ buttons.Contraband.addEventListener("click", function (filtercontraband) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
   } 
+  if (document.bodyclassList.contains("card")) {
+    document.body.classList.add("carddark");
+    document.body.classList.remove("card")
+  }
 })
 
 

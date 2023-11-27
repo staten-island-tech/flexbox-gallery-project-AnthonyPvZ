@@ -1,4 +1,4 @@
-import './style.css'
+import '../css/style.css'
 
 // filter guns and melee function
 const cards = [{
@@ -76,8 +76,8 @@ const cards = [{
 ];
 
 const container = document.querySelector("#container");
-
-cards.forEach((result) => {
+function Insert(blah){
+blah.forEach((result) => {
   const card = document.createElement('div');
   card.classlist = 'card';
   const description = `<div class="card"> 
@@ -87,7 +87,8 @@ cards.forEach((result) => {
   </div>`;
   container.innerHTML += description;
 })
-
+}
+Insert(cards)
 const buttons = {
   Guns: document.querySelector("#Guns"),
   Melees: document.querySelector("#Melee"),
@@ -118,20 +119,12 @@ buttons.Melees.addEventListener("click", function (filtermelee) {
   container.innerHTML = ""
   cards.filter((melees) => {
     return melees.type === "melee"
-  }).map((result) => {
-    const card = document.createElement('div');
-    card.classlist = 'card';
-    const description = `<div class="card"> 
-          <h2 class="card-title">${result.title}</h2>
-          <img src="${result.image}" alt="" class="card-img">
-          <p class="card-desc">${result.description}</p>
-        </div>`;
-    container.innerHTML += description;
-  })
+  }).map(Insert(result)) => Insert(result))
+
   if (document.body.classList.contains("dark")) {
     document.body.classList.add("light");
     document.body.classList.remove("dark");
-}})
+})})
 
 const contrabands = [{
   title: "Force Staff",
@@ -151,7 +144,7 @@ buttons.Contraband.addEventListener("click", function (filtercontraband) {
   contrabands.forEach((result) => {
     const card = document.createElement('div');
     card.classlist = 'card';
-    const description = `<div class="card"> 
+    const description = `<div class="carddark"> 
     <h2 class="card-title">${result.title}</h2>
     <img src="${result.image}" alt="" class="card-img">
     <p class="card-desc">${result.description}</p>
@@ -162,10 +155,6 @@ buttons.Contraband.addEventListener("click", function (filtercontraband) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
   } 
-  if (document.bodyclassList.contains("card")) {
-    document.body.classList.add("carddark");
-    document.body.classList.remove("card")
-  }
 })
 
 

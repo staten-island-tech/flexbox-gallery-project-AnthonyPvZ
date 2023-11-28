@@ -18,9 +18,9 @@
 :root {
   --black: rgb(9, 10, 15);
   --bordercolor: rgb(255, 0, 0);
-  --shadowy: rgba(34, 34, 34, 0.7);
+  --backgroundcolor: rgba(34, 34, 34, 0.7);
   --ghostywhite: rgb(194, 194, 194);
-  --sigilblue: #00bfff;
+  --buttoncolors: #00bfff;
   --textcolor: whitesmoke;
 }
 
@@ -33,7 +33,7 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 25px 25px 25px 25px;
-  background-color: var(--shadowy);
+  background-color: var(--backgroundcolor);
   box-shadow: inset 0px 10px 25px 5px rgba(0, 0, 0, 0.7);
 }
 
@@ -120,24 +120,24 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   margin: 25px 25px 25px 25px;
-  background-color: var(--shadowy);
+  background-color: var(--backgroundcolor);
   box-shadow: inset 0px 10px 25px 5px rgba(0, 0, 0, 0.7);
 }
 
 #Reset {
-  background-color: var(--sigilblue);
+  background-color: var(--buttoncolors);
 }
 
 #Guns {
-  background-color: var(--sigilblue);
+  background-color: var(--buttoncolors);
 }
 
 #Melee {
-  background-color: var(--sigilblue);
+  background-color: var(--buttoncolors);
 }
 
 #Contraband {
-  background-color: var(--shadowy);
+  background-color: var(--backgroundcolor);
   color: var(--textcolor);
 }
 
@@ -146,7 +146,7 @@ h1 {
   width: 30%;
   height: 10%;
   border: 1px solid var(--bordercolor);
-  background-color: var(--shadowy);
+  background-color: var(--backgroundcolor);
   color: var(--textcolor);
   font-size: 25px;
   line-height: 0px;

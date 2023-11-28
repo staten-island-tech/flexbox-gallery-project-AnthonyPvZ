@@ -1,6 +1,4 @@
 import '../css/style.css'
-
-// filter guns and melee function
 const cards = [{
   title: "Boomstick",
   type: "gun",
@@ -8,16 +6,10 @@ const cards = [{
   description: "This shotgun allows you to load up to four shells in the chamber at once, propelling you backwards when fired. Hold down reload for faster loading of each shell.",
 },
 {
-  title: "'Hyperion' Heavy Laser",
-  type: "gun",
-  image: "/hyperion.png",
-  description: "Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a change of piercing and have innate flame rounds. Loses damage over long distance.",
-},
-{
   title: "Murasama",
   type: "melee",
   image: "/murasama.png",
-  description: "It's the only thing I know for real… Can dodge in all directions. Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo. Regular blocking gives a slight boost.",
+  description: "It's the only thing I know for real… Can dodge in all directions. Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo. Regular blocking gives a slight boost. Consumes meter on swing.",
 },
 {
   title: "'Dark Arts' Necro Blade",
@@ -72,7 +64,13 @@ const cards = [{
   type: "melee",
   image: "/sanity sword.png",
   description: "Pressing SPRINT + RELOAD alternates between a sword and glaive. The sword has a 3 hit combo and the glaive can hit in an arc. Can Change firemode to dodge or teleport to a sigil.",
-}
+},
+{
+  title: "'Hyperion' Heavy Laser",
+  type: "gun",
+  image: "/hyperion.png",
+  description: "Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a change of piercing and have innate flame rounds. Loses damage over long distance.",
+},
 ];
 
 const contrabands = [{
@@ -91,10 +89,10 @@ const contrabands = [{
 const buttons = {
   Guns: document.querySelector("#Guns"),
   Melees: document.querySelector("#Melee"),
-  Contraband: document.querySelector("#Contraband")
+  Contraband: document.querySelector("#Contraband"),
+  Reset: document.querySelector("#Reset"),
 }
 const container = document.querySelector("#container");
-const cardse = document.querySelectorAll(".card");
 
 function Insert(blah) {
   blah.map((result) => {
@@ -108,8 +106,18 @@ function Insert(blah) {
     container.innerHTML += description;
   })
 }
-Insert(cards)
-
+function Insertdark(blah) {
+  blah.map((result) => {
+    const card = document.createElement('div');
+    card.classlist = 'card';
+    const description = `<div class="carddark"> 
+    <h2 class="card-title">${result.title}</h2>
+    <img src="${result.image}" alt="" class="card-img">
+    <p class="card-desc">${result.description}</p>
+  </div>`;
+    container.innerHTML += description;
+  })
+}
 buttons.Guns.addEventListener("click", function (filtergun) {
   filtergun.preventDefault();
   container.innerHTML = ""
@@ -135,29 +143,22 @@ buttons.Melees.addEventListener("click", function (filtermelee) {
     document.body.classList.remove("dark");
   }
 })
+buttons.Reset.addEventListener("click", function (reset) {
+  reset.preventDefault();
+  container.innerHTML = ""
+  Insert(cards)
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+})
 
 buttons.Contraband.addEventListener("click", function (filtercontraband) {
   filtercontraband.preventDefault();
   container.innerHTML = "";
-  Insert(contrabands)
+  Insertdark(contrabands)
   if (document.body.classList.contains("light")) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
   }
-  // if (document.body.container.)
 })
-
-
-/* <div class="card">
-          <h2 class="card-title">Murasama</h2>
-          <img src="murasama.png" alt="" class="card-img">
-          <p class="card-desc">It's the only thing I know for real…
-              Can dodge in all directions.
-              Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo.
-              Regular
-              blocking gives a slight boost.
-              Consumes meter on swing.</p>
-      </div> */
-
-
-// https://stackoverflow.com/questions/54706080/generating-dynamic-html-cards-from-a-javascript-array

@@ -1,18 +1,123 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body class="light">    
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite App</title>
+</head>
+
+<body class="light">
+  <h1 class="Project-head">Roamer's Arsenal</h1>
+  <div class="buttons">
+    <p>Filters</p>
+    <button type="button" id="Reset">Normal</button>
     <button type="button" id="Guns">Guns</button>
     <button type="button" id="Melee">Melee Weapons</button>
     <button type="button" id="Contraband">Contraband</button>
-    <div id="container">
-    </div>
 
+  </div>
+  <div id="container">
+    <div class="card">
+      <h2 class="card-title">Boomstick</h2>
+      <img src="Boomstick.png" alt="" class="card-img">
+      <p class="card-desc">This shotgun allows you to load up to four shells in the chamber at once, propelling
+        you
+        backwards when fired. Hold down reload for faster loading of each shell.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">Murasama</h2>
+      <img src="murasama.png" alt="" class="card-img">
+      <p class="card-desc">It's the only thing I know for real…
+        Can dodge in all directions.
+        Can perfect block/parry with good timing, greatly boosting attacks and dodges. Has a 3 hit combo.
+        Regular
+        blocking gives a slight boost.
+        Consumes meter on swing.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Dark Arts' Necro Blade</h2>
+      <img src="dark arts.png" alt="" class="card-img">
+      <p class="card-desc">A blade used in rituals to commune with dark spirits. Reload to leave behind your body
+        and
+        become a shadow, dodging attacks & marking zombies that you have touched. Leaving the shadow form deals
+        damage to marked zombies and empowers the blade. Reload again to leave the shadow form early.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Bloodhound' Vampire Sword</h2>
+      <img src="Vampire sword.png" alt="" class="card-img">
+      <p class="card-desc">A cursed sword with the ability to lifesteal from its victims. Health is stored and can
+        be
+        accessed with reload. Each stored blood usage will have a cooldown of 10 seconds.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Tremor' gravity hammer</h2>
+      <img src="Grav hammer.png" alt="" class="card-img">
+      <p class="card-desc">Has considerable knockback on you and nearby zombies while in propelling mode. Swings
+        very
+        fast for a heavy hammer. Instant swing while stable, cleaves while in stable mode. Charged attacks self
+        knockback 60% further.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Bloodthirst' Skullblade</h2>
+      <img src="Skullblade.png" alt="" class="card-img">
+      <p class="card-desc">You feel great power touching the blade but your heart and mind seem to get empty… go
+        slaughter them all. Press reload to toss damaging skulls based on your presence. Press Q to change
+        presences
+        and gain an aura. Landing skulls will trigger your buildup and grant you a buff based on your presence.
+      </p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">Bone Shiv</h2>
+      <img src="bone shiv.png" alt="" class="card-img">
+      <p class="card-desc">Very sharp and deals extra damage to the back. Backstabbing a zombie lets you phase at
+        full speed for a short duration. Grants you fervor, speed and blood armor on backstab kill. Hides your
+        aura aswell.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Chaos' Blades</h2>
+      <img src="Chaos blades.png" alt="" class="card-img">
+      <p class="card-desc">Press RELOAD to throw one of your blades of chaos at a wall or zombie, pulling you to
+        the location.
+        Block to detach yourself. Attacking zombies with the blades builds up to an unbridled rage.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Revelation' Heavenly Sword</h2>
+      <img src="spirit sword.png" alt="" class="card-img">
+      <p class="card-desc">A legendary sword said to have come from the heavens. It pierces shadow resist on
+        undead, can shatter meteors, and builds up to emitting a fiery blaze. Innate fire attachment.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Heretic' Whirligig Saw</h2>
+      <img src="whirligig.png" alt="" class="card-img">
+      <p class="card-desc">A rod with attached rotating mechanical saws which can deal serrate damage. Hits many
+        times very quickly in bursts.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">Sanity Swordshifter</h2>
+      <img src="sanity sword.png" alt="" class="card-img">
+      <p class="card-desc">Pressing SPRINT + RELOAD alternates between a sword and glaive. The sword has a 3 hit
+        combo and the glaive can hit in an arc. Can Change firemode to dodge or teleport to a sigil.</p>
+
+    </div>
+    <div class="card">
+      <h2 class="card-title">'Hyperion' Heavy Laser</h2>
+      <img src="hyperion.png" alt="" class="card-img">
+      <p class="card-desc">Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a
+        change of piercing and have innate flame rounds. Loses damage over long distance.</p>
+    </div>
     <script type="module" src="./js/main.js"></script>
-  </body>
+</body>
+
 </html>

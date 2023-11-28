@@ -1,7 +1,7 @@
-.light{
+.light {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   background-image: url(/zombie\ survival.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -9,35 +9,40 @@
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
 }
 
-:root{
+:root {
   --black: rgb(9, 10, 15);
-  --red: rgb(255, 0, 0);
+  --bordercolor: rgb(255, 0, 0);
   --shadowy: rgba(34, 34, 34, 0.7);
   --ghostywhite: rgb(194, 194, 194);
+  --sigilblue: #00bfff;
+  --textcolor: whitesmoke;
 }
 
-.card{
+.card {
   font-size: 30px;
-  display: flex ;
-  border: 1px solid var(--red);
-  width: 19%;
+  display: flex;
+  border: 1px solid var(--bordercolor);
+  width: 40vh;
   height: 35vh;
-  justify-content:center;
-  flex-wrap:wrap;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 25px 25px 25px 25px;
   background-color: var(--shadowy);
-  box-shadow: inset 0px 10px 25px 5px rgba(0,0,0, 0.7);
+  box-shadow: inset 0px 10px 25px 5px rgba(0, 0, 0, 0.7);
 }
+
 .card-img {
   width: 60%;
   height: 25%;
   justify-content: center;
 }
+
 .card-title {
   font-size: 2.2rem;
   text-transform: uppercase;
@@ -45,66 +50,104 @@
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
-  color: whitesmoke
+  color: var(--textcolor);
 }
+
 .card-desc {
   font-size: 15px;
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
-  color: whitesmoke;
-  font-family: 'Inter', sans-serif;;
+  color: var(--textcolor);
+  font-family: 'Inter', sans-serif;
+  ;
 }
+
 h1 {
   text-align: center;
   width: 50%;
   font-size: 65px;
-  color:rgb(194, 194, 194);
+  color: rgb(194, 194, 194);
   background-color: rgba(34, 34, 34, 0.7);
   margin-top: 40px;
   margin-left: 600px;
   margin-right: 600px;
-  border: 1px solid red
+  margin-bottom: 20px;
+  border: 1px solid var(--bordercolor);
 }
+
 #container {
   width: 100%;
   height: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
-@media screen and (max-width: 1200px){
+
+@media screen and (max-width: 1200px) {
   .card {
-      width: 45%;
+    width: 45%;
   }
 }
-@media screen and (max-width: 800px){
+
+@media screen and (max-width: 800px) {
   .card {
-      width: 100%;
+    width: 100%;
   }
 }
-.dark{
+
+.dark {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
   background-color: var(--black);
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   font-size: 62.5%;
   flex-direction: row;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  overflow-y: scroll;
 }
-.carddark{
+
+.carddark {
   font-size: 30px;
-  display: flex ;
+  display: flex;
   border: 1px solid var(--ghostywhite);
   width: 19%;
-  height: 45vh;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin: 25 25 25 25;
+  height: 50vh;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 25px 25px 25px 25px;
   background-color: var(--shadowy);
-  box-shadow: inset 0px 10px 25px 5px rgba(0,0,0, 0.7);
+  box-shadow: inset 0px 10px 25px 5px rgba(0, 0, 0, 0.7);
+}
+
+#Reset {
+  background-color: var(--sigilblue);
+}
+
+#Guns {
+  background-color: var(--sigilblue);
+}
+
+#Melee {
+  background-color: var(--sigilblue);
+}
+
+#Contraband {
+  background-color: var(--shadowy);
+  color: var(--textcolor);
+}
+
+.buttons {
+  text-align: center;
+  width: 30%;
+  height: 10%;
+  border: 1px solid var(--bordercolor);
+  background-color: var(--shadowy);
+  color: var(--textcolor);
+  font-size: 25px;
+  line-height: 0px;
 }

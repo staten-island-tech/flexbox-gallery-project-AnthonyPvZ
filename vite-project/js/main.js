@@ -75,86 +75,76 @@ const cards = [{
 }
 ];
 
-const container = document.querySelector("#container");
-function Insert(blah){
-blah.forEach((result) => {
-  const card = document.createElement('div');
-  card.classlist = 'card';
-  const description = `<div class="card"> 
-    <h2 class="card-title">${result.title}</h2>
-    <img src="${result.image}" alt="" class="card-img">
-    <p class="card-desc">${result.description}</p>
-  </div>`;
-  container.innerHTML += description;
-})
-}
-Insert(cards)
-const buttons = {
-  Guns: document.querySelector("#Guns"),
-  Melees: document.querySelector("#Melee"),
-  Contraband: document.querySelector("#Contraband")
-}
-buttons.Guns.addEventListener("click", function (filtergun) {
-  filtergun.preventDefault();
-  container.innerHTML = ""
-  cards.filter(function (guns) {
-    return guns.type === "gun"
-  }).map((result) => {
-    const card = document.createElement('div');
-    card.classlist = 'card';
-    const description = `<div class="card"> 
-        <h2 class="card-title">${result.title}</h2>
-        <img src="${result.image}" alt="" class="card-img">
-        <p class="card-desc">${result.description}</p>
-      </div>`;
-    container.innerHTML += description;
-  })
-  if (document.body.classList.contains("dark")) {
-    document.body.classList.add("light");
-    document.body.classList.remove("dark");
-}})
-
-buttons.Melees.addEventListener("click", function (filtermelee) {
-  filtermelee.preventDefault();
-  container.innerHTML = ""
-  cards.filter((melees) => {
-    return melees.type === "melee"
-  }).map(Insert(result)) => Insert(result))
-
-  if (document.body.classList.contains("dark")) {
-    document.body.classList.add("light");
-    document.body.classList.remove("dark");
-})})
-
 const contrabands = [{
   title: "Force Staff",
   type: "tool",
-  image: "",
+  image: "Force staff.png",
   description: "Control the wind with magic. Primary fire launches you in the direction you're looking. Secondary fire blasts zombies in front of you with cold air, slowing them, applying frostebite and pushing them away from you.",
 },
 {
   title: "Bane of Zblock",
   type: "trinket",
-  image: "",
+  image: "Bane of Zblock.png",
   description: "Allows the user to bunnyhop without restriction. No longer slowed when landing on the ground" + "-25% slow down from carrying heavy weapons" + "-0.6s minimum crouch jump time",
-}]
-buttons.Contraband.addEventListener("click", function (filtercontraband) {
-  filtercontraband.preventDefault();
-  container.innerHTML = "";
-  contrabands.forEach((result) => {
+}];
+
+const buttons = {
+  Guns: document.querySelector("#Guns"),
+  Melees: document.querySelector("#Melee"),
+  Contraband: document.querySelector("#Contraband")
+}
+const container = document.querySelector("#container");
+const cardse = document.querySelectorAll(".card");
+
+function Insert(blah) {
+  blah.map((result) => {
     const card = document.createElement('div');
     card.classlist = 'card';
-    const description = `<div class="carddark"> 
+    const description = `<div class="card"> 
     <h2 class="card-title">${result.title}</h2>
     <img src="${result.image}" alt="" class="card-img">
     <p class="card-desc">${result.description}</p>
   </div>`;
     container.innerHTML += description;
   })
+}
+Insert(cards)
+
+buttons.Guns.addEventListener("click", function (filtergun) {
+  filtergun.preventDefault();
+  container.innerHTML = ""
+  const guns = cards.filter(function (guns) {
+    return guns.type === "gun"
+  })
+  Insert(guns)
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+})
+
+buttons.Melees.addEventListener("click", function (filtermelee) {
+  filtermelee.preventDefault();
+  container.innerHTML = ""
+  const melees = cards.filter((melees) => {
+    return melees.type === "melee"
+  })
+  Insert(melees)
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+})
+
+buttons.Contraband.addEventListener("click", function (filtercontraband) {
+  filtercontraband.preventDefault();
+  container.innerHTML = "";
+  Insert(contrabands)
   if (document.body.classList.contains("light")) {
     document.body.classList.add("dark");
     document.body.classList.remove("light");
-  } 
+  }
+  // if (document.body.container.)
 })
 
 

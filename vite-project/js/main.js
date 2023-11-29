@@ -72,26 +72,20 @@ const cards = [{
   description: "Heavy laser cannon with very slow fire rate but massive burst damage. Lasers have a change of piercing and have innate flame rounds. Loses damage over long distance.",
 },
 ];
-
-const contrabands = [{
+const contrabands = [
+{
   title: "Force Staff",
-  type: "tool",
+  type: "Contraband",
   image: "Force staff.png",
   description: "Control the wind with magic. Primary fire launches you in the direction you're looking. Secondary fire blasts zombies in front of you with cold air, slowing them, applying frostebite and pushing them away from you.",
 },
 {
   title: "Bane of Zblock",
-  type: "trinket",
+  type: "Contraband",
   image: "Bane of Zblock.png",
   description: "Allows the user to bunnyhop without restriction. No longer slowed when landing on the ground" + "-25% slow down from carrying heavy weapons" + "-0.6s minimum crouch jump time",
-}];
-
-const buttons = {
-  Guns: document.querySelector("#Guns"),
-  Melees: document.querySelector("#Melee"),
-  Contraband: document.querySelector("#Contraband"),
-  Reset: document.querySelector("#Reset"),
 }
+]
 const container = document.querySelector("#container");
 
 function Insert(blah) {
@@ -118,54 +112,21 @@ function Insertdark(blah) {
     container.innerHTML += description;
   })
 }
-// buttons.Guns.addEventListener("click", function (filtergun) {
-//   filtergun.preventDefault();
-//   container.innerHTML = ""
-//   const guns = cards.filter(function (guns) {
-//     return guns.type === "gun"
-//   })
-//   Insert(guns)
-//   if (document.body.classList.contains("dark")) {
-//     document.body.classList.add("light");
-//     document.body.classList.remove("dark");
-//   }
-// })
 
-// buttons.Melees.addEventListener("click", function (filtermelee) {
-//   filtermelee.preventDefault();
-//   container.innerHTML = ""
-//   const melees = cards.filter((melees) => {
-//     return melees.type === "melee"
-//   })
-//   Insert(melees)
-//   if (document.body.classList.contains("dark")) {
-//     document.body.classList.add("light");
-//     document.body.classList.remove("dark");
-//   }
-// })
-// buttons.Reset.addEventListener("click", function (reset) {
-//   reset.preventDefault();
-//   container.innerHTML = ""
-//   Insert(cards)
-//   if (document.body.classList.contains("dark")) {
-//     document.body.classList.add("light");
-//     document.body.classList.remove("dark");
-//   }
-// })
-
-// buttons.Contraband.addEventListener("click", function (filtercontraband) {
-//   filtercontraband.preventDefault();
-//   container.innerHTML = "";
-//   Insertdark(contrabands)
-//   if (document.body.classList.contains("light")) {
-//     document.body.classList.add("dark");
-//     document.body.classList.remove("light");
-//   }
-// })
 
 let buttonse = document.querySelectorAll(".button")
 buttonse.forEach((btn)=> btn.addEventListener("click", function(){
 let filter = btn.textContent
-let newarr = cards.filter((type)=>type.type.includes(filter))
-Insert(newarr)
-}))
+container.innerHTML = ""
+let newarr = cards.filter((type)=> {return type.type === filter})
+if (filter === "Reset"){Insert(cards)}
+if (filter === "Contraband"){
+  Insertdark(contrabands)}
+else {Insert(newarr)}
+}
+))
+// if (document.body.classList.contains("dark")) {
+//   document.body.classList.add("light");
+//   document.body.classList.remove("dark");
+// }
+// }))

@@ -121,12 +121,12 @@ container.innerHTML = ""
 let newarr = cards.filter((type)=> {return type.type === filter})
 if (filter === "Reset"){Insert(cards)}
 if (filter === "Contraband"){
+  document.body.classList.remove("light")
+  document.body.classList.add("dark")
   Insertdark(contrabands)}
 else {Insert(newarr)}
-}
+if (document.body.classList.contains("dark")) {
+  document.body.classList.add("light");
+  document.body.classList.remove("dark");
+}}
 ))
-// if (document.body.classList.contains("dark")) {
-//   document.body.classList.add("light");
-//   document.body.classList.remove("dark");
-// }
-// }))

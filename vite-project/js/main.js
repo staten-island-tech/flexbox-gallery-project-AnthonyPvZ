@@ -73,18 +73,18 @@ const cards = [{
 },
 ];
 const contrabands = [
-{
-  title: "Force Staff",
-  type: "Contraband",
-  image: "Force staff.png",
-  description: "Control the wind with magic. Primary fire launches you in the direction you're looking. Secondary fire blasts zombies in front of you with cold air, slowing them, applying frostebite and pushing them away from you.",
-},
-{
-  title: "Bane of Zblock",
-  type: "Contraband",
-  image: "Bane of Zblock.png",
-  description: "Allows the user to bunnyhop without restriction. No longer slowed when landing on the ground" + "-25% slow down from carrying heavy weapons" + "-0.6s minimum crouch jump time",
-}
+  {
+    title: "Force Staff",
+    type: "Contraband",
+    image: "Force staff.png",
+    description: "Control the wind with magic. Primary fire launches you in the direction you're looking. Secondary fire blasts zombies in front of you with cold air, slowing them, applying frostebite and pushing them away from you.",
+  },
+  {
+    title: "Bane of Zblock",
+    type: "Contraband",
+    image: "Bane of Zblock.png",
+    description: "Allows the user to bunnyhop without restriction. No longer slowed when landing on the ground" + "-25% slow down from carrying heavy weapons" + "-0.6s minimum crouch jump time",
+  }
 ]
 const container = document.querySelector("#container");
 
@@ -115,18 +115,19 @@ function Insertdark(blah) {
 
 
 let buttonse = document.querySelectorAll(".button")
-buttonse.forEach((btn)=> btn.addEventListener("click", function(){
-let filter = btn.textContent
-container.innerHTML = ""
-let newarr = cards.filter((type)=> {return type.type === filter})
-if (filter === "Reset"){Insert(cards)}
-if (filter === "Contraband"){
-  document.body.classList.remove("light")
-  document.body.classList.add("dark")
-  Insertdark(contrabands)}
-else {Insert(newarr)}
-if (document.body.classList.contains("dark")) {
-  document.body.classList.add("light");
-  document.body.classList.remove("dark");
-}}
-))
+buttonse.forEach((btn) => btn.addEventListener("click", function () {
+  let filter = btn.textContent
+  container.innerHTML = ""
+  let newarr = cards.filter((type) => { return type.type === filter })
+  if (filter === "Reset") { Insert(cards) }
+  else {Insert(newarr)}
+  if (document.body.classList.contains("dark")) {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+  if (filter === "Contraband") {
+    Insertdark(contrabands)
+    document.body.classList.remove("light")
+    document.body.classList.add("dark")
+  }
+}))

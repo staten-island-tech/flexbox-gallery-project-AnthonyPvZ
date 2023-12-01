@@ -112,8 +112,6 @@ function Insertdark(blah) {
     container.innerHTML += description;
   })
 }
-
-
 let buttonse = document.querySelectorAll(".button")
 buttonse.forEach((btn) => btn.addEventListener("click", function () {
   let filter = btn.textContent

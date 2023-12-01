@@ -117,7 +117,7 @@ buttonse.forEach((btn) => btn.addEventListener("click", function () {
   let filter = btn.textContent
   container.innerHTML = ""
   let newarr = cards.filter((type) => { return type.type === filter })
-  if (filter === "Reset") { Insert(cards) }
+  if (filter === "Reset"){Insert(cards)}
   else {Insert(newarr)}
   if (document.body.classList.contains("dark")) {
     document.body.classList.add("light");
